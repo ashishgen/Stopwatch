@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <html>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STOPWATCH</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
-</head>
-<body>
-    <h1 class="hover-text">STOPWATCH</h1>
-    <div>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-     
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STOPWATCH</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head></head>
+<body style="background-color: rgb(65, 9, 9);">
+    <h1 class="hover-text" style="text-align: center; color: wheat; font-size: 70px;">STOPWATCH</h1>
+    <div style="margin-left: 580px;">
+    <div class="outer-circle">
+        <div class="inner-circle">
+            
+            <div class="number">
+            <span id="hr" class="text hour">0:</span>
+            <span id="min" class="text minute">0:</span>
+            <span id="sec" class="text second">0:</span>
+            <span id="mls" class="text milisecond">0</span>
 
-<button class="glow">Start</button>
-  
-
+        </div>
+        </div>
+    </div>
+      <span> 
+        <button id="btnreset" class="button reset ">Reset</button>
+        <button id="btnplay" class="button play">Play</button>
+        <button id="btnstop" class="button stop">Stop</button>
+    </span>
+</div>
+   
+ 
     
+
+   
 </body>
 </html>
