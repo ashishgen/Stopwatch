@@ -1,49 +1,52 @@
-let number = document.querySelector(".number");
-let btnreset = document.getElementById("btnreset");
-let btnplay = document.getElementById("btnplay");
-let btnstop = document.getElementById("btnstop");
+var isstop = true;
+var sec = 0;
+var min = 0;
+var hr =0;
 
-let  hr = 0;
-let min =0;
-let sec = 0;
-let mls =0;
-
-let timerId=null;
-btnplay.addEventListener('click',function(){
-    if(timerId!==null){
-        clearInterval(timerId);
+function start(){
+    if(isstop==true);
+    {
+        isstop=false;
+        timer();
     }
-    timerId = setInterval(startTimer,10);
+
 }
-
-);
-btnstop.addEventListener('click',function(){
-    clearInterval(timerId);
-});
-btnreset.addEventListener('click',function(){
-    clearInterval(timerId);
-    number.innerHTML="0:0:0:0";
-});
-
-function startTimer(){
-    mls++;
-    if(mls==100){
-        mls=0;
+function timer(){
+    
+    if(isstop==false){
+        sec=parseInt(sec);
+        min=parseInt(min);
+        hr=parseInt(hr);
         sec++;
         if(sec==60){
             sec=0;
             min++;
         }
+
         if(min==60){
-            min=0;
-            hr++;
-        }
+                min=0;
+                hr++; }
+            if(sec<10){
+                sec="0"+sec;
+            }
+            if(min<10){
+                min="0"+min;
+            }
+            if(hr<10){
+                hr="0"+hr;
+            }
+        stopwatch.innerHTML= hr+":"+ min +":"+ sec;
+        setTimeout("timer()",1000);
     }
-    let mlsString= mls<10?'0${mls}':mls;
-    let secString= sec<10?'0${sec}':sec;
-    let minString= min<10?'0${min}':min;
-    let hrString= hr<10?'0${hr}':hr;
-
+}
+function stop(){
+    isstop=true;
+}
+function reset(){
+    isstop=true;
+    sec=0;
+    min=0;
+    hr=0;
+    stopwatch.innerHTML="00:00:00";
     
-
 }
